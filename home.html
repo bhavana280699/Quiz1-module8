@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Quiz home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="jumbotron text-center">
+            <h1>QUIZAPPLICATION</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <form id="form">
+                    <h2>Enter your Roll No.</h2>
+                    <input id="rollno" autocomplete="off" type="text" placeholder="Roll No....">
+                    <h2 style="padding-top: 10%;">Enter your Course</h1>
+                    <input id="course" autocomplete="off" style="margin-bottom: 10%;" type="text" placeholder="Course....">                    
+                </form>
+            </div>
+            <div class="row">
+                <a href="question1.html"><button type="button" id="btn">Submit</button></a>
+            </div>
+        </div>
+    </body>
+    <script>
+        const rollnokey=document.querySelector("#rollno");
+        const coursekey=document.querySelector("#course");
+        const btn=document.querySelector("#btn");
+
+        btn.onclick=function(){
+            const rollno=rollnokey.value;
+            const course=coursekey.value;
+            console.log(rollno);
+            console.log(course);
+            if(rollno && course){
+                localStorage.setItem("rollno",rollno);
+                localStorage.setItem("course",course);
+            }
+        }
+
+        var score=0;
+        localStorage.setItem("score",score);
+        console.log(localStorage.getItem("score"));
+    </script>
+</html>

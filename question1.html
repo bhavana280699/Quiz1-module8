@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Question1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            .vertical-radio-buttons div {
+            display: block;
+            padding: 0 0 5px 5px;
+            clear: both;
+            }
+
+            .vertical-radio-buttons span {
+            display: block;
+            padding-left: 20px;
+            cursor: inherit;
+            }
+
+            .vertical-radio-buttons label {
+            font-size: rem-calc(16);
+            }
+
+            .vertical-radio-buttons input {
+            float: left;
+            width: 20px;
+            margin-left: -20px;
+            margin-top: 6px;
+            padding: 0;
+            -webkit-appearance: radio;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="jumbotron text-center">
+            <h1>Question 1</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <p><strong>Welcome</strong></p>
+                    <p id="rncr"></p>
+                </div>
+            </div>
+            <div style="margin-top: 1%; margin-bottom: 1%;" class="row text-center">
+                <div class="col text-center">
+                    <h5 style="margin-bottom: 3%;">Which planet in our solar system is known as the Red Planet?</h5>
+                    <div class="vertical-radio-buttons">
+                        <fieldset>
+                          <form>
+                            <div>
+                              <span>
+                                <input type="radio" name="IQ" value="Red" id="IQRed" required><label for="IQRed">Earth</label>
+                              </span>
+                            </div>
+                      
+                            <div>
+                              <span>
+                                <input type="radio" name="IQ" value="Blue" id="IQBlue" required><label for="IQBlue">Jupiter</label>
+                              </span>
+                            </div>
+                      
+                            <div>
+                              <span>
+                                <input type="radio" name="IQ" value="Yellow" id="day" required><label for="IQYellow">Mars</label>
+                              </span>
+                            </div>
+
+                            <div>
+                                <span>
+                                  <input type="radio" name="IQ" value="white" id="IQwhite" required><label for="IQwhite">Saturn</label>
+                                </span>
+                              </div>
+                      
+                          </form>
+                        </fieldset>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+
+                </div>
+                <div class="col-3">
+                    <a href="home.html"><button type="button" id="btn">Prev</button></a>
+                </div>
+                <div class="col">
+                    <a href="question2.html"><button type="button" id="btn">Next</button></a>
+                </div>
+                <div class="col-8">
+                </div>
+            </div>                        
+        </div>
+    </body>
+    <script>
+        const rno=localStorage.getItem(localStorage.key(0));
+        const crs=localStorage.getItem(localStorage.key(1));
+        console.log(rno);
+        console.log(crs);
+        document.querySelector("#rncr").innerHTML="<strong>Roll No.: </strong>"+rno+"<br>"+"<strong>Course: </strong>"+crs;
+        const ans=document.querySelector("#day");
+        ans.onclick=function(){
+            var sc=localStorage.getItem("score");
+            var sci=parseInt(sc);
+            sci++;
+            localStorage.setItem("score",sci);
+        }
+    </script>
+</html>

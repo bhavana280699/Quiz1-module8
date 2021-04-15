@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Result</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="jumbotron text-center">
+            <h1>You Have Completed The Quiz!!!</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 id="correct"></h1>
+                </div>
+                <div class="col">
+                    <h1 id="wrong"></h1>
+                </div>
+                <div class="col">
+                    <h1 id="total"></h1>
+                </div>
+                <div class="col">
+                    <h1 id="accuracy"></h1>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        const correct=localStorage.getItem("score");
+        const wrong=10-parseInt(correct);
+        const total=10*parseInt(correct);
+        document.querySelector("#correct").innerHTML="Correct Answers   : "+correct;
+        document.querySelector("#wrong").innerHTML="Wrong Answers       : "+wrong;
+        document.querySelector("#total").innerHTML="Total Score         : "+total;
+        document.querySelector("#accuracy").innerHTML="accuracy         : "+total+"%";
+    </script>
+</html>
